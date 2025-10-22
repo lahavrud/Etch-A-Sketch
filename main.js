@@ -1,5 +1,5 @@
-function createBoard(n){
-    const boardContainer = document.querySelector('.board-container');
+let boardContainer = document.querySelector('.board-container');
+function createBoard(n, boardContainer){
     for (let i = 0; i < n; i++) {
         const rowContainer = document.createElement('div');
         rowContainer.classList.add('row');
@@ -16,5 +16,9 @@ function createBoard(n){
 function colorOnHover (element){
     element.addEventListener('mouseover', () => element.style.backgroundColor='green');
 }
-
-createBoard(16);
+createBoard(16, boardContainer);
+const reset = document.querySelector('button');
+reset.addEventListener('click', () => {
+    boardContainer.replaceChildren();
+    createBoard(16, boardContainer);
+});
