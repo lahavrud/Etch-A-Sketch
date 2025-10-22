@@ -1,9 +1,12 @@
 html, body {
     display: flex;
+    flex-direction: column;
     height: 100%;
     width:100%;
     justify-content: center;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: burlywood;
 }
 
 * {
@@ -12,14 +15,26 @@ html, body {
     padding: 0;
 }
 
-
+h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    color: white;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: black; 
+}
 .board-container{
     display: flex;
     flex-direction: column;
-    width: 35em;
-    height: 35em;
+    width: 25em;
+    height: 25em;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    overflow: hidden;
 }
-
+.border {
+    border: 2px black solid;
+    border-radius: 30px;
+}
 .row {
     display: flex;
     flex: 1;

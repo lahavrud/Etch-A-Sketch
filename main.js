@@ -16,4 +16,5 @@ function createBoard(n){
 function colorOnHover (element){
     element.addEventListener('mouseover', () => element.style.backgroundColor='green');
 }
+
 createBoard(16);
