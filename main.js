@@ -14,11 +14,21 @@ function createBoard(n, boardContainer){
 }
 
 function colorOnHover (element){
-    element.addEventListener('mouseover', () => element.style.backgroundColor='green');
+    element.addEventListener('mouseover', () => element.style.backgroundColor= `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`);
 }
+
+const squareSize = document.querySelector("#size");
+
 createBoard(16, boardContainer);
+
 const reset = document.querySelector('button');
+
 reset.addEventListener('click', () => {
     boardContainer.replaceChildren();
-    createBoard(16, boardContainer);
+    createBoard(squareSize.value, boardContainer);
+});
+
+squareSize.addEventListener('change', (event) => {
+    boardContainer.replaceChildren();
+    createBoard(squareSize.value, boardContainer);
 });
