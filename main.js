@@ -13,9 +13,15 @@ function createBoard(n, boardContainer){
     }
 }
 
+
 function colorOnHover (element){
-    element.addEventListener('mouseover', () => element.style.backgroundColor= `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`);
+    element.addEventListener('mouseover', () =>{
+        const mainPalette = ["#264653","#2a9d8f","#e9c46a","#f4a261","#e76f51"];
+        const rndColor = mainPalette[Math.floor(Math.random()*5)];
+        element.style.backgroundColor= rndColor;
+    });
 }
+
 
 const squareSize = document.querySelector("#size");
 
@@ -29,6 +35,9 @@ reset.addEventListener('click', () => {
 });
 
 squareSize.addEventListener('change', (event) => {
+    newSize = event.target.value;
+    newSize = (newSize < 10) ? 10 : (newSize > 30) ? 30 : newSize; 
+    squareSize.value = newSize;
     boardContainer.replaceChildren();
-    createBoard(squareSize.value, boardContainer);
+    createBoard(newSize, boardContainer);
 });

@@ -4,8 +4,7 @@ html, body {
     height: 100%;
     width:100%;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: burlywood;
+    background-color: #F8F6F0;
 }
 
 * {
@@ -15,9 +14,11 @@ html, body {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 4em; font-weight: 700;
     margin-bottom: 0.5em;
-    color: white;
+    color: #264653;
+    font-family: 'Roboto Slab';
+    text-shadow: 2px 2px 0 #869194, 4px 4px 0 #D3D8D7;
     -webkit-text-stroke-width: 1px; 
     -webkit-text-stroke-color: black; 
 }
@@ -26,49 +27,73 @@ h1 {
     flex-direction: column;
     width: 25em;
     height: 25em;
-    background-color: whitesmoke;
-    border-radius: 30px;
-    overflow: hidden;
+    border-radius: 40px;
     justify-self: center;
 }
 
 .board-options {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-family: Poppins;
 }
 .border {
-    border: 2px black solid;
-    border-radius: 30px;
+    border: 2px solid #869194;
+    outline: 2px solid #FCFDF6;
+    border-radius: 40px;
     justify-self: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .row {
     display: flex;
     flex: 1;
     flex-direction: row;
-    border: 1px solid black;
 }
 
 .cell {
-    border: 1px solid black;
+    outline: 1px solid #474d4f;
     flex: 1;
+    border-radius: 2px;
+    transition: background-color 0.15s ease-out;
 }
 
 button {
     padding: 1em;
-    margin-bottom: 1em;
-    border-radius: 20px;
-    border: 0;
-    background-color: white;
-    color: black;
-
-
+    border-radius: 50px;
+    border: 1px solid #2a9d8f;
+    color: #2a9d8f;
+    transition: all 0.2s ease-in-out;
 }
 
 button:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+    background-color: #2a9d8f;
+    color: white;
+
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 button:active{
-    background-color: rgb(191, 191, 191);
+    background-color: #195e56;}
+
+p {
+    color: #264653;
+}
+
+input {
+    border: #869194 0.5px solid;
+    border-radius: 50px;
+    padding: 3px;
+    text-align: center;
+    padding-left: 15px;
+}
+
+input:focus{
+    outline: 1px solid #2a9d8f;
+}
+.size{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
